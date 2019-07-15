@@ -9,7 +9,7 @@ You can use this library to make using SVG icons in your Material UI project mor
 1. Install https://www.npmjs.com/package/@material-ui/icons 
 
     ```bash
-    $ npm i @material-ui/icons
+    $ npm i --save @material-ui/icons
     ```
     
 1. Add below to your `package.dhall`:
