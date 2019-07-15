@@ -18,11 +18,29 @@ You can use this library to make using SVG icons in your Material UI project mor
     let additions =
       { react-material-ui-svgicon =
           mkPackage
-             [ "react-basic"
+             [ "react"
              , "react-mui"
+             , "tscompat"
              ]
-             "https://github.com/matoruru/purescript-react-material-ui-svgicon"
+             "https://github.com/matoruru/purescript-react-material-ui-svgicon.git"
              "v0.1.0"
+      , react-mui =
+          mkPackage
+             [ "prelude"
+             , "react"
+             , "react-dom"
+             , "tscompat"
+             ]
+             "https://github.com/doolse/purescript-react-mui.git"
+             "v3.9.313"
+      , tscompat =
+          mkPackage
+             [ "prelude"
+             , "react"
+             , "typelevel-prelude"
+             ]
+             "https://github.com/doolse/purescript-tscompat.git"
+             "v1.0.1"
       }
     ```
 
