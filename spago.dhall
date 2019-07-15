@@ -5,7 +5,7 @@ You can edit this file as you like.
 { name =
     "purescript-react-material-ui-svgicon"
 , dependencies =
-    [ "react-basic", "react-mui" ]
+    [ "react-mui", "tscompat" ]
 , packages =
     ./packages.dhall
 , sources =
