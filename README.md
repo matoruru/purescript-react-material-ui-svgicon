@@ -23,7 +23,7 @@ You can use this library to make using SVG icons in your Material UI project mor
              , "tscompat"
              ]
              "https://github.com/matoruru/purescript-react-material-ui-svgicon.git"
-             "v0.1.0"
+             "v0.1.1"
       , react-mui =
           mkPackage
              [ "prelude"
