@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import arrowBackIosImpl :: forall a. R.ReactClass a
 
 arrowBackIos
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 arrowBackIos = flip (R.unsafeCreateElement arrowBackIosImpl) []
 
 arrowBackIos_ :: R.ReactElement

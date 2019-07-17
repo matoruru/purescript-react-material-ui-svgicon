@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import casinoRoundedImpl :: forall a. R.ReactClass a
 
 casinoRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 casinoRounded = flip (R.unsafeCreateElement casinoRoundedImpl) []
 
 casinoRounded_ :: R.ReactElement

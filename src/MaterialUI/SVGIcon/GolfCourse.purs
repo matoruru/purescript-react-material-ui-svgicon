@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import golfCourseImpl :: forall a. R.ReactClass a
 
 golfCourse
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 golfCourse = flip (R.unsafeCreateElement golfCourseImpl) []
 
 golfCourse_ :: R.ReactElement

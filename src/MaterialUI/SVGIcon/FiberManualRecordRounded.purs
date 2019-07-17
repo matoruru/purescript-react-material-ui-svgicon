@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import fiberManualRecordRoundedImpl :: forall a. R.ReactClass a
 
 fiberManualRecordRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 fiberManualRecordRounded = flip (R.unsafeCreateElement fiberManualRecordRoundedImpl) []
 
 fiberManualRecordRounded_ :: R.ReactElement

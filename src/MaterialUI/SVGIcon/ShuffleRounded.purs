@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import shuffleRoundedImpl :: forall a. R.ReactClass a
 
 shuffleRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 shuffleRounded = flip (R.unsafeCreateElement shuffleRoundedImpl) []
 
 shuffleRounded_ :: R.ReactElement

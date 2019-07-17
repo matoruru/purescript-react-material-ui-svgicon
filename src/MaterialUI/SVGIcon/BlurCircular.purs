@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import blurCircularImpl :: forall a. R.ReactClass a
 
 blurCircular
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 blurCircular = flip (R.unsafeCreateElement blurCircularImpl) []
 
 blurCircular_ :: R.ReactElement

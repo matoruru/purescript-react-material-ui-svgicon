@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import castForEducationImpl :: forall a. R.ReactClass a
 
 castForEducation
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 castForEducation = flip (R.unsafeCreateElement castForEducationImpl) []
 
 castForEducation_ :: R.ReactElement

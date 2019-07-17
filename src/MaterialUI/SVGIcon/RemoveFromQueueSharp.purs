@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import removeFromQueueSharpImpl :: forall a. R.ReactClass a
 
 removeFromQueueSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 removeFromQueueSharp = flip (R.unsafeCreateElement removeFromQueueSharpImpl) []
 
 removeFromQueueSharp_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import hourglassFullOutlinedImpl :: forall a. R.ReactClass a
 
 hourglassFullOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 hourglassFullOutlined = flip (R.unsafeCreateElement hourglassFullOutlinedImpl) []
 
 hourglassFullOutlined_ :: R.ReactElement

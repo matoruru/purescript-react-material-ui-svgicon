@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import viewStreamSharpImpl :: forall a. R.ReactClass a
 
 viewStreamSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 viewStreamSharp = flip (R.unsafeCreateElement viewStreamSharpImpl) []
 
 viewStreamSharp_ :: R.ReactElement

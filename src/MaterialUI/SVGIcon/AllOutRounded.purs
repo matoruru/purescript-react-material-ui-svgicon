@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import allOutRoundedImpl :: forall a. R.ReactClass a
 
 allOutRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 allOutRounded = flip (R.unsafeCreateElement allOutRoundedImpl) []
 
 allOutRounded_ :: R.ReactElement

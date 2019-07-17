@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import tabRoundedImpl :: forall a. R.ReactClass a
 
 tabRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 tabRounded = flip (R.unsafeCreateElement tabRoundedImpl) []
 
 tabRounded_ :: R.ReactElement

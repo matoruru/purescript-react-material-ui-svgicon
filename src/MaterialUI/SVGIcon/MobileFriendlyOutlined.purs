@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import mobileFriendlyOutlinedImpl :: forall a. R.ReactClass a
 
 mobileFriendlyOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 mobileFriendlyOutlined = flip (R.unsafeCreateElement mobileFriendlyOutlinedImpl) []
 
 mobileFriendlyOutlined_ :: R.ReactElement

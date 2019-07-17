@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import desktopMacRoundedImpl :: forall a. R.ReactClass a
 
 desktopMacRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 desktopMacRounded = flip (R.unsafeCreateElement desktopMacRoundedImpl) []
 
 desktopMacRounded_ :: R.ReactElement

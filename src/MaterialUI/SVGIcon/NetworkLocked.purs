@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import networkLockedImpl :: forall a. R.ReactClass a
 
 networkLocked
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 networkLocked = flip (R.unsafeCreateElement networkLockedImpl) []
 
 networkLocked_ :: R.ReactElement

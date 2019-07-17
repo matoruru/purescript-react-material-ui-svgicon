@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import accessibilityNewSharpImpl :: forall a. R.ReactClass a
 
 accessibilityNewSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 accessibilityNewSharp = flip (R.unsafeCreateElement accessibilityNewSharpImpl) []
 
 accessibilityNewSharp_ :: R.ReactElement

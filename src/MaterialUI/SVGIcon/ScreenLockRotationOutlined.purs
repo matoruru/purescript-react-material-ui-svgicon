@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import screenLockRotationOutlinedImpl :: forall a. R.ReactClass a
 
 screenLockRotationOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 screenLockRotationOutlined = flip (R.unsafeCreateElement screenLockRotationOutlinedImpl) []
 
 screenLockRotationOutlined_ :: R.ReactElement

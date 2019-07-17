@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import scatterPlotImpl :: forall a. R.ReactClass a
 
 scatterPlot
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 scatterPlot = flip (R.unsafeCreateElement scatterPlotImpl) []
 
 scatterPlot_ :: R.ReactElement

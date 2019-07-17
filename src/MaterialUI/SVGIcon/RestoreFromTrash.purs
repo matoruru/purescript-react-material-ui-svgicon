@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import restoreFromTrashImpl :: forall a. R.ReactClass a
 
 restoreFromTrash
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 restoreFromTrash = flip (R.unsafeCreateElement restoreFromTrashImpl) []
 
 restoreFromTrash_ :: R.ReactElement

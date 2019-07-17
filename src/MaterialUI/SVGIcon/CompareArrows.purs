@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import compareArrowsImpl :: forall a. R.ReactClass a
 
 compareArrows
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 compareArrows = flip (R.unsafeCreateElement compareArrowsImpl) []
 
 compareArrows_ :: R.ReactElement

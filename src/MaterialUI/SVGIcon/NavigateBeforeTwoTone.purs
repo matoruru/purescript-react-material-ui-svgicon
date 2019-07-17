@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import navigateBeforeTwoToneImpl :: forall a. R.ReactClass a
 
 navigateBeforeTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 navigateBeforeTwoTone = flip (R.unsafeCreateElement navigateBeforeTwoToneImpl) []
 
 navigateBeforeTwoTone_ :: R.ReactElement

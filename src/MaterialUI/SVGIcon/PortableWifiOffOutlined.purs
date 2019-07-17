@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import portableWifiOffOutlinedImpl :: forall a. R.ReactClass a
 
 portableWifiOffOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 portableWifiOffOutlined = flip (R.unsafeCreateElement portableWifiOffOutlinedImpl) []
 
 portableWifiOffOutlined_ :: R.ReactElement

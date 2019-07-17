@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import navigateNextSharpImpl :: forall a. R.ReactClass a
 
 navigateNextSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 navigateNextSharp = flip (R.unsafeCreateElement navigateNextSharpImpl) []
 
 navigateNextSharp_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import textRotationDownRoundedImpl :: forall a. R.ReactClass a
 
 textRotationDownRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 textRotationDownRounded = flip (R.unsafeCreateElement textRotationDownRoundedImpl) []
 
 textRotationDownRounded_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import printDisabledSharpImpl :: forall a. R.ReactClass a
 
 printDisabledSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 printDisabledSharp = flip (R.unsafeCreateElement printDisabledSharpImpl) []
 
 printDisabledSharp_ :: R.ReactElement

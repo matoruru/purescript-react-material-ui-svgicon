@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import settingsEthernetSharpImpl :: forall a. R.ReactClass a
 
 settingsEthernetSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 settingsEthernetSharp = flip (R.unsafeCreateElement settingsEthernetSharpImpl) []
 
 settingsEthernetSharp_ :: R.ReactElement

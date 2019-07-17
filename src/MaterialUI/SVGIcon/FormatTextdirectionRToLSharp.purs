@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import formatTextdirectionRToLSharpImpl :: forall a. R.ReactClass a
 
 formatTextdirectionRToLSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 formatTextdirectionRToLSharp = flip (R.unsafeCreateElement formatTextdirectionRToLSharpImpl) []
 
 formatTextdirectionRToLSharp_ :: R.ReactElement

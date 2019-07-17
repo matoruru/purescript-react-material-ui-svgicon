@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import formatListBulletedSharpImpl :: forall a. R.ReactClass a
 
 formatListBulletedSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 formatListBulletedSharp = flip (R.unsafeCreateElement formatListBulletedSharpImpl) []
 
 formatListBulletedSharp_ :: R.ReactElement

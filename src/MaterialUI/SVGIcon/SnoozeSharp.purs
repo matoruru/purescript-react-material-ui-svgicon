@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import snoozeSharpImpl :: forall a. R.ReactClass a
 
 snoozeSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 snoozeSharp = flip (R.unsafeCreateElement snoozeSharpImpl) []
 
 snoozeSharp_ :: R.ReactElement

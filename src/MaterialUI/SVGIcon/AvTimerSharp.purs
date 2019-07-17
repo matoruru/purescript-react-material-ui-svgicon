@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import avTimerSharpImpl :: forall a. R.ReactClass a
 
 avTimerSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 avTimerSharp = flip (R.unsafeCreateElement avTimerSharpImpl) []
 
 avTimerSharp_ :: R.ReactElement

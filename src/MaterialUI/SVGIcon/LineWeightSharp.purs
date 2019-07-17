@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import lineWeightSharpImpl :: forall a. R.ReactClass a
 
 lineWeightSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 lineWeightSharp = flip (R.unsafeCreateElement lineWeightSharpImpl) []
 
 lineWeightSharp_ :: R.ReactElement

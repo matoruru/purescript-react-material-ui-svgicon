@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import ondemandVideoRoundedImpl :: forall a. R.ReactClass a
 
 ondemandVideoRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 ondemandVideoRounded = flip (R.unsafeCreateElement ondemandVideoRoundedImpl) []
 
 ondemandVideoRounded_ :: R.ReactElement

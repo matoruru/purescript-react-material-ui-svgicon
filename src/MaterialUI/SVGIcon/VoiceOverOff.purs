@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import voiceOverOffImpl :: forall a. R.ReactClass a
 
 voiceOverOff
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 voiceOverOff = flip (R.unsafeCreateElement voiceOverOffImpl) []
 
 voiceOverOff_ :: R.ReactElement

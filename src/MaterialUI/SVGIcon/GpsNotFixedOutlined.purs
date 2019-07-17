@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import gpsNotFixedOutlinedImpl :: forall a. R.ReactClass a
 
 gpsNotFixedOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 gpsNotFixedOutlined = flip (R.unsafeCreateElement gpsNotFixedOutlinedImpl) []
 
 gpsNotFixedOutlined_ :: R.ReactElement

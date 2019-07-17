@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import skipNextOutlinedImpl :: forall a. R.ReactClass a
 
 skipNextOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 skipNextOutlined = flip (R.unsafeCreateElement skipNextOutlinedImpl) []
 
 skipNextOutlined_ :: R.ReactElement

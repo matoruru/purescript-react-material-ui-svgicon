@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import gTranslateSharpImpl :: forall a. R.ReactClass a
 
 gTranslateSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 gTranslateSharp = flip (R.unsafeCreateElement gTranslateSharpImpl) []
 
 gTranslateSharp_ :: R.ReactElement

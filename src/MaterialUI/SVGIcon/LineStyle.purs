@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import lineStyleImpl :: forall a. R.ReactClass a
 
 lineStyle
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 lineStyle = flip (R.unsafeCreateElement lineStyleImpl) []
 
 lineStyle_ :: R.ReactElement

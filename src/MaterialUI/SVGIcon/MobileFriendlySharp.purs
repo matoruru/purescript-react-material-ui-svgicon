@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import mobileFriendlySharpImpl :: forall a. R.ReactClass a
 
 mobileFriendlySharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 mobileFriendlySharp = flip (R.unsafeCreateElement mobileFriendlySharpImpl) []
 
 mobileFriendlySharp_ :: R.ReactElement

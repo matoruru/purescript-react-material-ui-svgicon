@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import formatLineSpacingSharpImpl :: forall a. R.ReactClass a
 
 formatLineSpacingSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 formatLineSpacingSharp = flip (R.unsafeCreateElement formatLineSpacingSharpImpl) []
 
 formatLineSpacingSharp_ :: R.ReactElement

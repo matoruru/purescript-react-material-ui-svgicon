@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import phoneBluetoothSpeakerSharpImpl :: forall a. R.ReactClass a
 
 phoneBluetoothSpeakerSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 phoneBluetoothSpeakerSharp = flip (R.unsafeCreateElement phoneBluetoothSpeakerSharpImpl) []
 
 phoneBluetoothSpeakerSharp_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import timeToLeaveImpl :: forall a. R.ReactClass a
 
 timeToLeave
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 timeToLeave = flip (R.unsafeCreateElement timeToLeaveImpl) []
 
 timeToLeave_ :: R.ReactElement

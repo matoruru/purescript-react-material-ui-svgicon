@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import zoomOutMapOutlinedImpl :: forall a. R.ReactClass a
 
 zoomOutMapOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 zoomOutMapOutlined = flip (R.unsafeCreateElement zoomOutMapOutlinedImpl) []
 
 zoomOutMapOutlined_ :: R.ReactElement

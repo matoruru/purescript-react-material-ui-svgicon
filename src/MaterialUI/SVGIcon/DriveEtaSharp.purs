@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import driveEtaSharpImpl :: forall a. R.ReactClass a
 
 driveEtaSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 driveEtaSharp = flip (R.unsafeCreateElement driveEtaSharpImpl) []
 
 driveEtaSharp_ :: R.ReactElement

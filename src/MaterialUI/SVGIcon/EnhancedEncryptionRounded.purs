@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import enhancedEncryptionRoundedImpl :: forall a. R.ReactClass a
 
 enhancedEncryptionRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 enhancedEncryptionRounded = flip (R.unsafeCreateElement enhancedEncryptionRoundedImpl) []
 
 enhancedEncryptionRounded_ :: R.ReactElement

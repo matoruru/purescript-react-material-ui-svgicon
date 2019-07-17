@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import subdirectoryArrowLeftOutlinedImpl :: forall a. R.ReactClass a
 
 subdirectoryArrowLeftOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 subdirectoryArrowLeftOutlined = flip (R.unsafeCreateElement subdirectoryArrowLeftOutlinedImpl) []
 
 subdirectoryArrowLeftOutlined_ :: R.ReactElement

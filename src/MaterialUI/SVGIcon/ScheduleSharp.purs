@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import scheduleSharpImpl :: forall a. R.ReactClass a
 
 scheduleSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 scheduleSharp = flip (R.unsafeCreateElement scheduleSharpImpl) []
 
 scheduleSharp_ :: R.ReactElement

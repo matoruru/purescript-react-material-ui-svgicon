@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import indeterminateCheckBoxRoundedImpl :: forall a. R.ReactClass a
 
 indeterminateCheckBoxRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 indeterminateCheckBoxRounded = flip (R.unsafeCreateElement indeterminateCheckBoxRoundedImpl) []
 
 indeterminateCheckBoxRounded_ :: R.ReactElement

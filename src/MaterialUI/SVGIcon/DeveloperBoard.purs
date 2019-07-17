@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import developerBoardImpl :: forall a. R.ReactClass a
 
 developerBoard
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 developerBoard = flip (R.unsafeCreateElement developerBoardImpl) []
 
 developerBoard_ :: R.ReactElement

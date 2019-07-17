@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import findReplaceSharpImpl :: forall a. R.ReactClass a
 
 findReplaceSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 findReplaceSharp = flip (R.unsafeCreateElement findReplaceSharpImpl) []
 
 findReplaceSharp_ :: R.ReactElement

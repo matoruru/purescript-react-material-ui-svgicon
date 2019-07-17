@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import deleteSweepOutlinedImpl :: forall a. R.ReactClass a
 
 deleteSweepOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 deleteSweepOutlined = flip (R.unsafeCreateElement deleteSweepOutlinedImpl) []
 
 deleteSweepOutlined_ :: R.ReactElement

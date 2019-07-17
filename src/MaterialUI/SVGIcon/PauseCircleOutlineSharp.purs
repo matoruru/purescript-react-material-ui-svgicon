@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import pauseCircleOutlineSharpImpl :: forall a. R.ReactClass a
 
 pauseCircleOutlineSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 pauseCircleOutlineSharp = flip (R.unsafeCreateElement pauseCircleOutlineSharpImpl) []
 
 pauseCircleOutlineSharp_ :: R.ReactElement

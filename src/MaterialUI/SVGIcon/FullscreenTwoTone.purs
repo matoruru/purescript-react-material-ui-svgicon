@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import fullscreenTwoToneImpl :: forall a. R.ReactClass a
 
 fullscreenTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 fullscreenTwoTone = flip (R.unsafeCreateElement fullscreenTwoToneImpl) []
 
 fullscreenTwoTone_ :: R.ReactElement

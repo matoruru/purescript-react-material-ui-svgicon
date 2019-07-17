@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import insertDriveFileRoundedImpl :: forall a. R.ReactClass a
 
 insertDriveFileRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 insertDriveFileRounded = flip (R.unsafeCreateElement insertDriveFileRoundedImpl) []
 
 insertDriveFileRounded_ :: R.ReactElement

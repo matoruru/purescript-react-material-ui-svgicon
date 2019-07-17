@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import linkedCameraRoundedImpl :: forall a. R.ReactClass a
 
 linkedCameraRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 linkedCameraRounded = flip (R.unsafeCreateElement linkedCameraRoundedImpl) []
 
 linkedCameraRounded_ :: R.ReactElement

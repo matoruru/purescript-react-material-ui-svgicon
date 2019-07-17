@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import transitEnterexitImpl :: forall a. R.ReactClass a
 
 transitEnterexit
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 transitEnterexit = flip (R.unsafeCreateElement transitEnterexitImpl) []
 
 transitEnterexit_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import dialpadSharpImpl :: forall a. R.ReactClass a
 
 dialpadSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 dialpadSharp = flip (R.unsafeCreateElement dialpadSharpImpl) []
 
 dialpadSharp_ :: R.ReactElement

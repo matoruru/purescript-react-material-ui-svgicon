@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import verticalSplitTwoToneImpl :: forall a. R.ReactClass a
 
 verticalSplitTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 verticalSplitTwoTone = flip (R.unsafeCreateElement verticalSplitTwoToneImpl) []
 
 verticalSplitTwoTone_ :: R.ReactElement

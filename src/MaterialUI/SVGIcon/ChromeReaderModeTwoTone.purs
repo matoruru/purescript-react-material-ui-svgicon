@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import chromeReaderModeTwoToneImpl :: forall a. R.ReactClass a
 
 chromeReaderModeTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 chromeReaderModeTwoTone = flip (R.unsafeCreateElement chromeReaderModeTwoToneImpl) []
 
 chromeReaderModeTwoTone_ :: R.ReactElement

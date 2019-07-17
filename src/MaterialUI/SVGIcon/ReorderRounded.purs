@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import reorderRoundedImpl :: forall a. R.ReactClass a
 
 reorderRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 reorderRounded = flip (R.unsafeCreateElement reorderRoundedImpl) []
 
 reorderRounded_ :: R.ReactElement

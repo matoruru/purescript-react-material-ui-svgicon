@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import networkWifiOutlinedImpl :: forall a. R.ReactClass a
 
 networkWifiOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 networkWifiOutlined = flip (R.unsafeCreateElement networkWifiOutlinedImpl) []
 
 networkWifiOutlined_ :: R.ReactElement

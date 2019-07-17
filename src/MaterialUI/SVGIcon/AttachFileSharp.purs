@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import attachFileSharpImpl :: forall a. R.ReactClass a
 
 attachFileSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 attachFileSharp = flip (R.unsafeCreateElement attachFileSharpImpl) []
 
 attachFileSharp_ :: R.ReactElement

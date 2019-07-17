@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import batteryChargingFullImpl :: forall a. R.ReactClass a
 
 batteryChargingFull
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 batteryChargingFull = flip (R.unsafeCreateElement batteryChargingFullImpl) []
 
 batteryChargingFull_ :: R.ReactElement

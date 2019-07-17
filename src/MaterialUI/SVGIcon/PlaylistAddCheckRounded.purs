@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import playlistAddCheckRoundedImpl :: forall a. R.ReactClass a
 
 playlistAddCheckRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 playlistAddCheckRounded = flip (R.unsafeCreateElement playlistAddCheckRoundedImpl) []
 
 playlistAddCheckRounded_ :: R.ReactElement

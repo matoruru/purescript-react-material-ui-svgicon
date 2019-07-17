@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import photoSizeSelectLargeRoundedImpl :: forall a. R.ReactClass a
 
 photoSizeSelectLargeRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 photoSizeSelectLargeRounded = flip (R.unsafeCreateElement photoSizeSelectLargeRoundedImpl) []
 
 photoSizeSelectLargeRounded_ :: R.ReactElement

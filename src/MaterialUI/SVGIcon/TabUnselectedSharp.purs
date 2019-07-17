@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import tabUnselectedSharpImpl :: forall a. R.ReactClass a
 
 tabUnselectedSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 tabUnselectedSharp = flip (R.unsafeCreateElement tabUnselectedSharpImpl) []
 
 tabUnselectedSharp_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import bookmarkBorderTwoToneImpl :: forall a. R.ReactClass a
 
 bookmarkBorderTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 bookmarkBorderTwoTone = flip (R.unsafeCreateElement bookmarkBorderTwoToneImpl) []
 
 bookmarkBorderTwoTone_ :: R.ReactElement

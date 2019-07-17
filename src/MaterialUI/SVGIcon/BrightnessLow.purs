@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import brightnessLowImpl :: forall a. R.ReactClass a
 
 brightnessLow
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 brightnessLow = flip (R.unsafeCreateElement brightnessLowImpl) []
 
 brightnessLow_ :: R.ReactElement

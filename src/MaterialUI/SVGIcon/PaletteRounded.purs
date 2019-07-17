@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import paletteRoundedImpl :: forall a. R.ReactClass a
 
 paletteRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 paletteRounded = flip (R.unsafeCreateElement paletteRoundedImpl) []
 
 paletteRounded_ :: R.ReactElement

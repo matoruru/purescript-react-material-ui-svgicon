@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import cloudUploadSharpImpl :: forall a. R.ReactClass a
 
 cloudUploadSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 cloudUploadSharp = flip (R.unsafeCreateElement cloudUploadSharpImpl) []
 
 cloudUploadSharp_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import settingsInputAntennaOutlinedImpl :: forall a. R.ReactClass a
 
 settingsInputAntennaOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 settingsInputAntennaOutlined = flip (R.unsafeCreateElement settingsInputAntennaOutlinedImpl) []
 
 settingsInputAntennaOutlined_ :: R.ReactElement

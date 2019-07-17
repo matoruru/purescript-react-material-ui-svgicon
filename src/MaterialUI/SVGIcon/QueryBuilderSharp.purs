@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import queryBuilderSharpImpl :: forall a. R.ReactClass a
 
 queryBuilderSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 queryBuilderSharp = flip (R.unsafeCreateElement queryBuilderSharpImpl) []
 
 queryBuilderSharp_ :: R.ReactElement

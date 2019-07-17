@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import signalWifi2BarTwoToneImpl :: forall a. R.ReactClass a
 
 signalWifi2BarTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 signalWifi2BarTwoTone = flip (R.unsafeCreateElement signalWifi2BarTwoToneImpl) []
 
 signalWifi2BarTwoTone_ :: R.ReactElement

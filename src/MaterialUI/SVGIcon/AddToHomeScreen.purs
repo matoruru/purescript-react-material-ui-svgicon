@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import addToHomeScreenImpl :: forall a. R.ReactClass a
 
 addToHomeScreen
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 addToHomeScreen = flip (R.unsafeCreateElement addToHomeScreenImpl) []
 
 addToHomeScreen_ :: R.ReactElement

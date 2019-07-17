@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import sortByAlphaSharpImpl :: forall a. R.ReactClass a
 
 sortByAlphaSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 sortByAlphaSharp = flip (R.unsafeCreateElement sortByAlphaSharpImpl) []
 
 sortByAlphaSharp_ :: R.ReactElement

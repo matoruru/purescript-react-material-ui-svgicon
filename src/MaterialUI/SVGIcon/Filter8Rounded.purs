@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import filter8RoundedImpl :: forall a. R.ReactClass a
 
 filter8Rounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 filter8Rounded = flip (R.unsafeCreateElement filter8RoundedImpl) []
 
 filter8Rounded_ :: R.ReactElement

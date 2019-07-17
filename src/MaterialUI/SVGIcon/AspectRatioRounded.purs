@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import aspectRatioRoundedImpl :: forall a. R.ReactClass a
 
 aspectRatioRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 aspectRatioRounded = flip (R.unsafeCreateElement aspectRatioRoundedImpl) []
 
 aspectRatioRounded_ :: R.ReactElement

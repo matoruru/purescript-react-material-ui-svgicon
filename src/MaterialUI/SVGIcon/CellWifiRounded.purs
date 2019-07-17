@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import cellWifiRoundedImpl :: forall a. R.ReactClass a
 
 cellWifiRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 cellWifiRounded = flip (R.unsafeCreateElement cellWifiRoundedImpl) []
 
 cellWifiRounded_ :: R.ReactElement

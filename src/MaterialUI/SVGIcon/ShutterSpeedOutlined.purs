@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import shutterSpeedOutlinedImpl :: forall a. R.ReactClass a
 
 shutterSpeedOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 shutterSpeedOutlined = flip (R.unsafeCreateElement shutterSpeedOutlinedImpl) []
 
 shutterSpeedOutlined_ :: R.ReactElement

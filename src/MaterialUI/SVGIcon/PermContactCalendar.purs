@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import permContactCalendarImpl :: forall a. R.ReactClass a
 
 permContactCalendar
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 permContactCalendar = flip (R.unsafeCreateElement permContactCalendarImpl) []
 
 permContactCalendar_ :: R.ReactElement

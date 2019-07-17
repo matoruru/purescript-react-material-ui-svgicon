@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import fullscreenExitImpl :: forall a. R.ReactClass a
 
 fullscreenExit
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 fullscreenExit = flip (R.unsafeCreateElement fullscreenExitImpl) []
 
 fullscreenExit_ :: R.ReactElement

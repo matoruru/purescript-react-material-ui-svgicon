@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import chevronRightRoundedImpl :: forall a. R.ReactClass a
 
 chevronRightRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 chevronRightRounded = flip (R.unsafeCreateElement chevronRightRoundedImpl) []
 
 chevronRightRounded_ :: R.ReactElement

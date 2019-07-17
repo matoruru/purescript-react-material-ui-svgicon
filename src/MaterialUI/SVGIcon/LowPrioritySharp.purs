@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import lowPrioritySharpImpl :: forall a. R.ReactClass a
 
 lowPrioritySharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 lowPrioritySharp = flip (R.unsafeCreateElement lowPrioritySharpImpl) []
 
 lowPrioritySharp_ :: R.ReactElement

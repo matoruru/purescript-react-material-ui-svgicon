@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import keyboardBackspaceSharpImpl :: forall a. R.ReactClass a
 
 keyboardBackspaceSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 keyboardBackspaceSharp = flip (R.unsafeCreateElement keyboardBackspaceSharpImpl) []
 
 keyboardBackspaceSharp_ :: R.ReactElement

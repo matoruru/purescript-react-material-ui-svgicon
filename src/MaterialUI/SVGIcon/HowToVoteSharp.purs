@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import howToVoteSharpImpl :: forall a. R.ReactClass a
 
 howToVoteSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 howToVoteSharp = flip (R.unsafeCreateElement howToVoteSharpImpl) []
 
 howToVoteSharp_ :: R.ReactElement

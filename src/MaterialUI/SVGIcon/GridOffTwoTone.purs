@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import gridOffTwoToneImpl :: forall a. R.ReactClass a
 
 gridOffTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 gridOffTwoTone = flip (R.unsafeCreateElement gridOffTwoToneImpl) []
 
 gridOffTwoTone_ :: R.ReactElement

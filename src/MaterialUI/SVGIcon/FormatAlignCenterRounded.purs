@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import formatAlignCenterRoundedImpl :: forall a. R.ReactClass a
 
 formatAlignCenterRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 formatAlignCenterRounded = flip (R.unsafeCreateElement formatAlignCenterRoundedImpl) []
 
 formatAlignCenterRounded_ :: R.ReactElement

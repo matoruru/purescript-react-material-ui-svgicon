@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import indeterminateCheckBoxOutlinedImpl :: forall a. R.ReactClass a
 
 indeterminateCheckBoxOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 indeterminateCheckBoxOutlined = flip (R.unsafeCreateElement indeterminateCheckBoxOutlinedImpl) []
 
 indeterminateCheckBoxOutlined_ :: R.ReactElement

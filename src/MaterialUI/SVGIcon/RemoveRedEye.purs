@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import removeRedEyeImpl :: forall a. R.ReactClass a
 
 removeRedEye
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 removeRedEye = flip (R.unsafeCreateElement removeRedEyeImpl) []
 
 removeRedEye_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import vignetteOutlinedImpl :: forall a. R.ReactClass a
 
 vignetteOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 vignetteOutlined = flip (R.unsafeCreateElement vignetteOutlinedImpl) []
 
 vignetteOutlined_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import settingsBluetoothImpl :: forall a. R.ReactClass a
 
 settingsBluetooth
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 settingsBluetooth = flip (R.unsafeCreateElement settingsBluetoothImpl) []
 
 settingsBluetooth_ :: R.ReactElement

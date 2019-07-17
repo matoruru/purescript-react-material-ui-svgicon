@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import rotate90DegreesCcwTwoToneImpl :: forall a. R.ReactClass a
 
 rotate90DegreesCcwTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 rotate90DegreesCcwTwoTone = flip (R.unsafeCreateElement rotate90DegreesCcwTwoToneImpl) []
 
 rotate90DegreesCcwTwoTone_ :: R.ReactElement

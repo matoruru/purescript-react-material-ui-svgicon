@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import tapAndPlayImpl :: forall a. R.ReactClass a
 
 tapAndPlay
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 tapAndPlay = flip (R.unsafeCreateElement tapAndPlayImpl) []
 
 tapAndPlay_ :: R.ReactElement

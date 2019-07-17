@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import rvHookupRoundedImpl :: forall a. R.ReactClass a
 
 rvHookupRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 rvHookupRounded = flip (R.unsafeCreateElement rvHookupRoundedImpl) []
 
 rvHookupRounded_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import surroundSoundSharpImpl :: forall a. R.ReactClass a
 
 surroundSoundSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 surroundSoundSharp = flip (R.unsafeCreateElement surroundSoundSharpImpl) []
 
 surroundSoundSharp_ :: R.ReactElement

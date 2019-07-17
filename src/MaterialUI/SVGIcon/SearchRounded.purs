@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import searchRoundedImpl :: forall a. R.ReactClass a
 
 searchRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 searchRounded = flip (R.unsafeCreateElement searchRoundedImpl) []
 
 searchRounded_ :: R.ReactElement

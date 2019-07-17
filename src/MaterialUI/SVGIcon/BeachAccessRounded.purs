@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import beachAccessRoundedImpl :: forall a. R.ReactClass a
 
 beachAccessRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 beachAccessRounded = flip (R.unsafeCreateElement beachAccessRoundedImpl) []
 
 beachAccessRounded_ :: R.ReactElement

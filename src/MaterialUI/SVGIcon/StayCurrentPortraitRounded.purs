@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import stayCurrentPortraitRoundedImpl :: forall a. R.ReactClass a
 
 stayCurrentPortraitRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 stayCurrentPortraitRounded = flip (R.unsafeCreateElement stayCurrentPortraitRoundedImpl) []
 
 stayCurrentPortraitRounded_ :: R.ReactElement

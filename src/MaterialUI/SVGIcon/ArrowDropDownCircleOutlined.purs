@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import arrowDropDownCircleOutlinedImpl :: forall a. R.ReactClass a
 
 arrowDropDownCircleOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 arrowDropDownCircleOutlined = flip (R.unsafeCreateElement arrowDropDownCircleOutlinedImpl) []
 
 arrowDropDownCircleOutlined_ :: R.ReactElement

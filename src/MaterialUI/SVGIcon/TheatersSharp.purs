@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import theatersSharpImpl :: forall a. R.ReactClass a
 
 theatersSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 theatersSharp = flip (R.unsafeCreateElement theatersSharpImpl) []
 
 theatersSharp_ :: R.ReactElement

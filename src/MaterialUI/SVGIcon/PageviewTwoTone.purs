@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import pageviewTwoToneImpl :: forall a. R.ReactClass a
 
 pageviewTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 pageviewTwoTone = flip (R.unsafeCreateElement pageviewTwoToneImpl) []
 
 pageviewTwoTone_ :: R.ReactElement

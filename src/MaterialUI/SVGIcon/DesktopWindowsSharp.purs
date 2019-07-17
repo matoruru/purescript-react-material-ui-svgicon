@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import desktopWindowsSharpImpl :: forall a. R.ReactClass a
 
 desktopWindowsSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 desktopWindowsSharp = flip (R.unsafeCreateElement desktopWindowsSharpImpl) []
 
 desktopWindowsSharp_ :: R.ReactElement

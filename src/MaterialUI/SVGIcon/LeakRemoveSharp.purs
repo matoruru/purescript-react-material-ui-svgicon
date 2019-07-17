@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import leakRemoveSharpImpl :: forall a. R.ReactClass a
 
 leakRemoveSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 leakRemoveSharp = flip (R.unsafeCreateElement leakRemoveSharpImpl) []
 
 leakRemoveSharp_ :: R.ReactElement

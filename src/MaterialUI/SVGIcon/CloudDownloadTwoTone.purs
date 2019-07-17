@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import cloudDownloadTwoToneImpl :: forall a. R.ReactClass a
 
 cloudDownloadTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 cloudDownloadTwoTone = flip (R.unsafeCreateElement cloudDownloadTwoToneImpl) []
 
 cloudDownloadTwoTone_ :: R.ReactElement

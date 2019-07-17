@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import chromeReaderModeOutlinedImpl :: forall a. R.ReactClass a
 
 chromeReaderModeOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 chromeReaderModeOutlined = flip (R.unsafeCreateElement chromeReaderModeOutlinedImpl) []
 
 chromeReaderModeOutlined_ :: R.ReactElement

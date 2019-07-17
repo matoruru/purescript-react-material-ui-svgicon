@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import dragIndicatorOutlinedImpl :: forall a. R.ReactClass a
 
 dragIndicatorOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 dragIndicatorOutlined = flip (R.unsafeCreateElement dragIndicatorOutlinedImpl) []
 
 dragIndicatorOutlined_ :: R.ReactElement

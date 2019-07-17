@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import localLaundryServiceRoundedImpl :: forall a. R.ReactClass a
 
 localLaundryServiceRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 localLaundryServiceRounded = flip (R.unsafeCreateElement localLaundryServiceRoundedImpl) []
 
 localLaundryServiceRounded_ :: R.ReactElement

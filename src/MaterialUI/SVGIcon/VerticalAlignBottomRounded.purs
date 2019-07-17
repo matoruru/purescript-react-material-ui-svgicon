@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import verticalAlignBottomRoundedImpl :: forall a. R.ReactClass a
 
 verticalAlignBottomRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 verticalAlignBottomRounded = flip (R.unsafeCreateElement verticalAlignBottomRoundedImpl) []
 
 verticalAlignBottomRounded_ :: R.ReactElement

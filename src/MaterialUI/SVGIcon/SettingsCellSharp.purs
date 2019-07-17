@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import settingsCellSharpImpl :: forall a. R.ReactClass a
 
 settingsCellSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 settingsCellSharp = flip (R.unsafeCreateElement settingsCellSharpImpl) []
 
 settingsCellSharp_ :: R.ReactElement

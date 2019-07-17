@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import stopScreenShareImpl :: forall a. R.ReactClass a
 
 stopScreenShare
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 stopScreenShare = flip (R.unsafeCreateElement stopScreenShareImpl) []
 
 stopScreenShare_ :: R.ReactElement

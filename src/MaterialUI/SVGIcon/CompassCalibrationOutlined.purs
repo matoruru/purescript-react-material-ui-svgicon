@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import compassCalibrationOutlinedImpl :: forall a. R.ReactClass a
 
 compassCalibrationOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 compassCalibrationOutlined = flip (R.unsafeCreateElement compassCalibrationOutlinedImpl) []
 
 compassCalibrationOutlined_ :: R.ReactElement

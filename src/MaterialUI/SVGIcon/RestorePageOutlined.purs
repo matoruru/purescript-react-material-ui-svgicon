@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import restorePageOutlinedImpl :: forall a. R.ReactClass a
 
 restorePageOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 restorePageOutlined = flip (R.unsafeCreateElement restorePageOutlinedImpl) []
 
 restorePageOutlined_ :: R.ReactElement

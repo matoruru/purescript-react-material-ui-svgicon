@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import addToQueueSharpImpl :: forall a. R.ReactClass a
 
 addToQueueSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 addToQueueSharp = flip (R.unsafeCreateElement addToQueueSharpImpl) []
 
 addToQueueSharp_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import fingerprintTwoToneImpl :: forall a. R.ReactClass a
 
 fingerprintTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 fingerprintTwoTone = flip (R.unsafeCreateElement fingerprintTwoToneImpl) []
 
 fingerprintTwoTone_ :: R.ReactElement

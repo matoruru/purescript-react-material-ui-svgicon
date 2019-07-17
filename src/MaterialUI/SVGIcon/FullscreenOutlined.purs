@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import fullscreenOutlinedImpl :: forall a. R.ReactClass a
 
 fullscreenOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 fullscreenOutlined = flip (R.unsafeCreateElement fullscreenOutlinedImpl) []
 
 fullscreenOutlined_ :: R.ReactElement

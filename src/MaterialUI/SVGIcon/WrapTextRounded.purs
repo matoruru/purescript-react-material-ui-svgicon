@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import wrapTextRoundedImpl :: forall a. R.ReactClass a
 
 wrapTextRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 wrapTextRounded = flip (R.unsafeCreateElement wrapTextRoundedImpl) []
 
 wrapTextRounded_ :: R.ReactElement

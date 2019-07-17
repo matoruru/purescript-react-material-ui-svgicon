@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import desktopWindowsRoundedImpl :: forall a. R.ReactClass a
 
 desktopWindowsRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 desktopWindowsRounded = flip (R.unsafeCreateElement desktopWindowsRoundedImpl) []
 
 desktopWindowsRounded_ :: R.ReactElement

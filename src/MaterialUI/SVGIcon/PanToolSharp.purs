@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import panToolSharpImpl :: forall a. R.ReactClass a
 
 panToolSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 panToolSharp = flip (R.unsafeCreateElement panToolSharpImpl) []
 
 panToolSharp_ :: R.ReactElement

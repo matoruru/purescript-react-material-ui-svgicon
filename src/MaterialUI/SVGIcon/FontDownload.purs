@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import fontDownloadImpl :: forall a. R.ReactClass a
 
 fontDownload
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 fontDownload = flip (R.unsafeCreateElement fontDownloadImpl) []
 
 fontDownload_ :: R.ReactElement

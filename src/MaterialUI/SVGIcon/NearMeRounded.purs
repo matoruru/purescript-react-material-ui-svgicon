@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import nearMeRoundedImpl :: forall a. R.ReactClass a
 
 nearMeRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 nearMeRounded = flip (R.unsafeCreateElement nearMeRoundedImpl) []
 
 nearMeRounded_ :: R.ReactElement

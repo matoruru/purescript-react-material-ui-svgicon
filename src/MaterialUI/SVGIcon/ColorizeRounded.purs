@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import colorizeRoundedImpl :: forall a. R.ReactClass a
 
 colorizeRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 colorizeRounded = flip (R.unsafeCreateElement colorizeRoundedImpl) []
 
 colorizeRounded_ :: R.ReactElement

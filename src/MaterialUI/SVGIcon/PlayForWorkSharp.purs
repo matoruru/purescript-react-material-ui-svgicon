@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import playForWorkSharpImpl :: forall a. R.ReactClass a
 
 playForWorkSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 playForWorkSharp = flip (R.unsafeCreateElement playForWorkSharpImpl) []
 
 playForWorkSharp_ :: R.ReactElement

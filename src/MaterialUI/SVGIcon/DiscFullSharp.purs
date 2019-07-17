@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import discFullSharpImpl :: forall a. R.ReactClass a
 
 discFullSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 discFullSharp = flip (R.unsafeCreateElement discFullSharpImpl) []
 
 discFullSharp_ :: R.ReactElement

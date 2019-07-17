@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import volumeMuteImpl :: forall a. R.ReactClass a
 
 volumeMute
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 volumeMute = flip (R.unsafeCreateElement volumeMuteImpl) []
 
 volumeMute_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import bookmarksRoundedImpl :: forall a. R.ReactClass a
 
 bookmarksRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 bookmarksRounded = flip (R.unsafeCreateElement bookmarksRoundedImpl) []
 
 bookmarksRounded_ :: R.ReactElement

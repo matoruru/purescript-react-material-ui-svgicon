@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import formatQuoteSharpImpl :: forall a. R.ReactClass a
 
 formatQuoteSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 formatQuoteSharp = flip (R.unsafeCreateElement formatQuoteSharpImpl) []
 
 formatQuoteSharp_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import swapHorizOutlinedImpl :: forall a. R.ReactClass a
 
 swapHorizOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 swapHorizOutlined = flip (R.unsafeCreateElement swapHorizOutlinedImpl) []
 
 swapHorizOutlined_ :: R.ReactElement

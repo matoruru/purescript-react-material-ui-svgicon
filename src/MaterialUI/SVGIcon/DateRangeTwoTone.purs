@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import dateRangeTwoToneImpl :: forall a. R.ReactClass a
 
 dateRangeTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 dateRangeTwoTone = flip (R.unsafeCreateElement dateRangeTwoToneImpl) []
 
 dateRangeTwoTone_ :: R.ReactElement

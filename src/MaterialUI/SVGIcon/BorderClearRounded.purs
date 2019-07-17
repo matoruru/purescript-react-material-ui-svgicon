@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import borderClearRoundedImpl :: forall a. R.ReactClass a
 
 borderClearRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 borderClearRounded = flip (R.unsafeCreateElement borderClearRoundedImpl) []
 
 borderClearRounded_ :: R.ReactElement

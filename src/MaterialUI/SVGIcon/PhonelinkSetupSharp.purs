@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import phonelinkSetupSharpImpl :: forall a. R.ReactClass a
 
 phonelinkSetupSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 phonelinkSetupSharp = flip (R.unsafeCreateElement phonelinkSetupSharpImpl) []
 
 phonelinkSetupSharp_ :: R.ReactElement

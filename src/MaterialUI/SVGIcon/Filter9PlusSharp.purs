@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import filter9PlusSharpImpl :: forall a. R.ReactClass a
 
 filter9PlusSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 filter9PlusSharp = flip (R.unsafeCreateElement filter9PlusSharpImpl) []
 
 filter9PlusSharp_ :: R.ReactElement

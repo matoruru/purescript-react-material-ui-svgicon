@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import gavelSharpImpl :: forall a. R.ReactClass a
 
 gavelSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 gavelSharp = flip (R.unsafeCreateElement gavelSharpImpl) []
 
 gavelSharp_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import insertChartOutlinedTwoToneImpl :: forall a. R.ReactClass a
 
 insertChartOutlinedTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 insertChartOutlinedTwoTone = flip (R.unsafeCreateElement insertChartOutlinedTwoToneImpl) []
 
 insertChartOutlinedTwoTone_ :: R.ReactElement

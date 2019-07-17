@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import flashAutoRoundedImpl :: forall a. R.ReactClass a
 
 flashAutoRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 flashAutoRounded = flip (R.unsafeCreateElement flashAutoRoundedImpl) []
 
 flashAutoRounded_ :: R.ReactElement

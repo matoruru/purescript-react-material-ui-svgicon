@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import threeDRotationSharpImpl :: forall a. R.ReactClass a
 
 threeDRotationSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 threeDRotationSharp = flip (R.unsafeCreateElement threeDRotationSharpImpl) []
 
 threeDRotationSharp_ :: R.ReactElement

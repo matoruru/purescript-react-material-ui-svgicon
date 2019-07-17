@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import gTranslateRoundedImpl :: forall a. R.ReactClass a
 
 gTranslateRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 gTranslateRounded = flip (R.unsafeCreateElement gTranslateRoundedImpl) []
 
 gTranslateRounded_ :: R.ReactElement

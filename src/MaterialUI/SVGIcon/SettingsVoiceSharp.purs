@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import settingsVoiceSharpImpl :: forall a. R.ReactClass a
 
 settingsVoiceSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 settingsVoiceSharp = flip (R.unsafeCreateElement settingsVoiceSharpImpl) []
 
 settingsVoiceSharp_ :: R.ReactElement

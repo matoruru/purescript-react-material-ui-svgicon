@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import looks5TwoToneImpl :: forall a. R.ReactClass a
 
 looks5TwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 looks5TwoTone = flip (R.unsafeCreateElement looks5TwoToneImpl) []
 
 looks5TwoTone_ :: R.ReactElement

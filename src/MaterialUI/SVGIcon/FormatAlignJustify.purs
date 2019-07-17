@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import formatAlignJustifyImpl :: forall a. R.ReactClass a
 
 formatAlignJustify
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 formatAlignJustify = flip (R.unsafeCreateElement formatAlignJustifyImpl) []
 
 formatAlignJustify_ :: R.ReactElement

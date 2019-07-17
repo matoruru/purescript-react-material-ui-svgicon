@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import checkBoxOutlineBlankTwoToneImpl :: forall a. R.ReactClass a
 
 checkBoxOutlineBlankTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 checkBoxOutlineBlankTwoTone = flip (R.unsafeCreateElement checkBoxOutlineBlankTwoToneImpl) []
 
 checkBoxOutlineBlankTwoTone_ :: R.ReactElement

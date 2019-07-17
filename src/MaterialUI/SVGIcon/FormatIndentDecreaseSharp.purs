@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import formatIndentDecreaseSharpImpl :: forall a. R.ReactClass a
 
 formatIndentDecreaseSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 formatIndentDecreaseSharp = flip (R.unsafeCreateElement formatIndentDecreaseSharpImpl) []
 
 formatIndentDecreaseSharp_ :: R.ReactElement

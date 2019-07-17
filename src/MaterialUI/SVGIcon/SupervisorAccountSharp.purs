@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import supervisorAccountSharpImpl :: forall a. R.ReactClass a
 
 supervisorAccountSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 supervisorAccountSharp = flip (R.unsafeCreateElement supervisorAccountSharpImpl) []
 
 supervisorAccountSharp_ :: R.ReactElement

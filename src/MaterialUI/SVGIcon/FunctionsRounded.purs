@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import functionsRoundedImpl :: forall a. R.ReactClass a
 
 functionsRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 functionsRounded = flip (R.unsafeCreateElement functionsRoundedImpl) []
 
 functionsRounded_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import queuePlayNextImpl :: forall a. R.ReactClass a
 
 queuePlayNext
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 queuePlayNext = flip (R.unsafeCreateElement queuePlayNextImpl) []
 
 queuePlayNext_ :: R.ReactElement

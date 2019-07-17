@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import viewHeadlineSharpImpl :: forall a. R.ReactClass a
 
 viewHeadlineSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 viewHeadlineSharp = flip (R.unsafeCreateElement viewHeadlineSharpImpl) []
 
 viewHeadlineSharp_ :: R.ReactElement

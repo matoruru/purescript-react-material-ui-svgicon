@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import favoriteBorderOutlinedImpl :: forall a. R.ReactClass a
 
 favoriteBorderOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 favoriteBorderOutlined = flip (R.unsafeCreateElement favoriteBorderOutlinedImpl) []
 
 favoriteBorderOutlined_ :: R.ReactElement

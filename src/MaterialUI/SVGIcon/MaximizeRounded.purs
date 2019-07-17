@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import maximizeRoundedImpl :: forall a. R.ReactClass a
 
 maximizeRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 maximizeRounded = flip (R.unsafeCreateElement maximizeRoundedImpl) []
 
 maximizeRounded_ :: R.ReactElement

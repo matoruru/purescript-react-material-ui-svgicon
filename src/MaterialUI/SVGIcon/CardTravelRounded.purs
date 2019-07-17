@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import cardTravelRoundedImpl :: forall a. R.ReactClass a
 
 cardTravelRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 cardTravelRounded = flip (R.unsafeCreateElement cardTravelRoundedImpl) []
 
 cardTravelRounded_ :: R.ReactElement

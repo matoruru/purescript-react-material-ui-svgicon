@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import settingsOverscanImpl :: forall a. R.ReactClass a
 
 settingsOverscan
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 settingsOverscan = flip (R.unsafeCreateElement settingsOverscanImpl) []
 
 settingsOverscan_ :: R.ReactElement

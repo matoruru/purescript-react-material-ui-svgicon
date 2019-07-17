@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import filterHdrOutlinedImpl :: forall a. R.ReactClass a
 
 filterHdrOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 filterHdrOutlined = flip (R.unsafeCreateElement filterHdrOutlinedImpl) []
 
 filterHdrOutlined_ :: R.ReactElement

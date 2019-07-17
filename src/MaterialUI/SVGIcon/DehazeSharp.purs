@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import dehazeSharpImpl :: forall a. R.ReactClass a
 
 dehazeSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 dehazeSharp = flip (R.unsafeCreateElement dehazeSharpImpl) []
 
 dehazeSharp_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import chatBubbleSharpImpl :: forall a. R.ReactClass a
 
 chatBubbleSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 chatBubbleSharp = flip (R.unsafeCreateElement chatBubbleSharpImpl) []
 
 chatBubbleSharp_ :: R.ReactElement

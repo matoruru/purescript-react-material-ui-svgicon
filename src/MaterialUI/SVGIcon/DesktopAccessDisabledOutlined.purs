@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import desktopAccessDisabledOutlinedImpl :: forall a. R.ReactClass a
 
 desktopAccessDisabledOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 desktopAccessDisabledOutlined = flip (R.unsafeCreateElement desktopAccessDisabledOutlinedImpl) []
 
 desktopAccessDisabledOutlined_ :: R.ReactElement

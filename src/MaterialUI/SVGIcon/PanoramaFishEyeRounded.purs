@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import panoramaFishEyeRoundedImpl :: forall a. R.ReactClass a
 
 panoramaFishEyeRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 panoramaFishEyeRounded = flip (R.unsafeCreateElement panoramaFishEyeRoundedImpl) []
 
 panoramaFishEyeRounded_ :: R.ReactElement

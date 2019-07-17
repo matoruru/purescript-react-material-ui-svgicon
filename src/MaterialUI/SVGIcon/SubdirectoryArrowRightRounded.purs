@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import subdirectoryArrowRightRoundedImpl :: forall a. R.ReactClass a
 
 subdirectoryArrowRightRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 subdirectoryArrowRightRounded = flip (R.unsafeCreateElement subdirectoryArrowRightRoundedImpl) []
 
 subdirectoryArrowRightRounded_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import priorityHighRoundedImpl :: forall a. R.ReactClass a
 
 priorityHighRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 priorityHighRounded = flip (R.unsafeCreateElement priorityHighRoundedImpl) []
 
 priorityHighRounded_ :: R.ReactElement

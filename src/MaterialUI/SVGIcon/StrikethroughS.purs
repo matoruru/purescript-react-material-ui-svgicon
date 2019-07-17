@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import strikethroughSImpl :: forall a. R.ReactClass a
 
 strikethroughS
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 strikethroughS = flip (R.unsafeCreateElement strikethroughSImpl) []
 
 strikethroughS_ :: R.ReactElement

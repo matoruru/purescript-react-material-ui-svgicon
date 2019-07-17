@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import viewCarouselSharpImpl :: forall a. R.ReactClass a
 
 viewCarouselSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 viewCarouselSharp = flip (R.unsafeCreateElement viewCarouselSharpImpl) []
 
 viewCarouselSharp_ :: R.ReactElement

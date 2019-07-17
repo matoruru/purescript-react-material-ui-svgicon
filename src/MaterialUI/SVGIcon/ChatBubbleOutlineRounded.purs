@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import chatBubbleOutlineRoundedImpl :: forall a. R.ReactClass a
 
 chatBubbleOutlineRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 chatBubbleOutlineRounded = flip (R.unsafeCreateElement chatBubbleOutlineRoundedImpl) []
 
 chatBubbleOutlineRounded_ :: R.ReactElement

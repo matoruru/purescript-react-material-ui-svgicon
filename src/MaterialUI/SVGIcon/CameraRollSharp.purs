@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import cameraRollSharpImpl :: forall a. R.ReactClass a
 
 cameraRollSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 cameraRollSharp = flip (R.unsafeCreateElement cameraRollSharpImpl) []
 
 cameraRollSharp_ :: R.ReactElement

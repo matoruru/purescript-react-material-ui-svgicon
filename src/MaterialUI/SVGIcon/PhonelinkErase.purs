@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import phonelinkEraseImpl :: forall a. R.ReactClass a
 
 phonelinkErase
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 phonelinkErase = flip (R.unsafeCreateElement phonelinkEraseImpl) []
 
 phonelinkErase_ :: R.ReactElement

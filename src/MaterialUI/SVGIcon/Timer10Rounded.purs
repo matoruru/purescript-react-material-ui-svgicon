@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import timer10RoundedImpl :: forall a. R.ReactClass a
 
 timer10Rounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 timer10Rounded = flip (R.unsafeCreateElement timer10RoundedImpl) []
 
 timer10Rounded_ :: R.ReactElement

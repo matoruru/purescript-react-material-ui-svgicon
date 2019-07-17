@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import formatTextdirectionRToLOutlinedImpl :: forall a. R.ReactClass a
 
 formatTextdirectionRToLOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 formatTextdirectionRToLOutlined = flip (R.unsafeCreateElement formatTextdirectionRToLOutlinedImpl) []
 
 formatTextdirectionRToLOutlined_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import audiotrackSharpImpl :: forall a. R.ReactClass a
 
 audiotrackSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 audiotrackSharp = flip (R.unsafeCreateElement audiotrackSharpImpl) []
 
 audiotrackSharp_ :: R.ReactElement

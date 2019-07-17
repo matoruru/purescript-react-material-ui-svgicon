@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import removeCircleTwoToneImpl :: forall a. R.ReactClass a
 
 removeCircleTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 removeCircleTwoTone = flip (R.unsafeCreateElement removeCircleTwoToneImpl) []
 
 removeCircleTwoTone_ :: R.ReactElement

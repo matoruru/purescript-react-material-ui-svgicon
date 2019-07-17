@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import dateRangeSharpImpl :: forall a. R.ReactClass a
 
 dateRangeSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 dateRangeSharp = flip (R.unsafeCreateElement dateRangeSharpImpl) []
 
 dateRangeSharp_ :: R.ReactElement

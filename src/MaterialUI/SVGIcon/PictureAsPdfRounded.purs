@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import pictureAsPdfRoundedImpl :: forall a. R.ReactClass a
 
 pictureAsPdfRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 pictureAsPdfRounded = flip (R.unsafeCreateElement pictureAsPdfRoundedImpl) []
 
 pictureAsPdfRounded_ :: R.ReactElement

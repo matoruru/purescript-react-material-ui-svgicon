@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import meetingRoomRoundedImpl :: forall a. R.ReactClass a
 
 meetingRoomRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 meetingRoomRounded = flip (R.unsafeCreateElement meetingRoomRoundedImpl) []
 
 meetingRoomRounded_ :: R.ReactElement

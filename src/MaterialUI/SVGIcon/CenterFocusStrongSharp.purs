@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import centerFocusStrongSharpImpl :: forall a. R.ReactClass a
 
 centerFocusStrongSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 centerFocusStrongSharp = flip (R.unsafeCreateElement centerFocusStrongSharpImpl) []
 
 centerFocusStrongSharp_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import radioButtonUncheckedImpl :: forall a. R.ReactClass a
 
 radioButtonUnchecked
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 radioButtonUnchecked = flip (R.unsafeCreateElement radioButtonUncheckedImpl) []
 
 radioButtonUnchecked_ :: R.ReactElement

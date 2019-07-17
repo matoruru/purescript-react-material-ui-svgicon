@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import fitnessCenterImpl :: forall a. R.ReactClass a
 
 fitnessCenter
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 fitnessCenter = flip (R.unsafeCreateElement fitnessCenterImpl) []
 
 fitnessCenter_ :: R.ReactElement

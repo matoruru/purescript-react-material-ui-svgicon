@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import hdrWeakOutlinedImpl :: forall a. R.ReactClass a
 
 hdrWeakOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 hdrWeakOutlined = flip (R.unsafeCreateElement hdrWeakOutlinedImpl) []
 
 hdrWeakOutlined_ :: R.ReactElement

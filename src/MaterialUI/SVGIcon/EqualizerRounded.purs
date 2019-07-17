@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import equalizerRoundedImpl :: forall a. R.ReactClass a
 
 equalizerRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 equalizerRounded = flip (R.unsafeCreateElement equalizerRoundedImpl) []
 
 equalizerRounded_ :: R.ReactElement

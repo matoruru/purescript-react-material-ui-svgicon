@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import wbIridescentTwoToneImpl :: forall a. R.ReactClass a
 
 wbIridescentTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 wbIridescentTwoTone = flip (R.unsafeCreateElement wbIridescentTwoToneImpl) []
 
 wbIridescentTwoTone_ :: R.ReactElement

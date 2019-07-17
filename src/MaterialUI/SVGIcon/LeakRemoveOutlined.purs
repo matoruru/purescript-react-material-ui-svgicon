@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import leakRemoveOutlinedImpl :: forall a. R.ReactClass a
 
 leakRemoveOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 leakRemoveOutlined = flip (R.unsafeCreateElement leakRemoveOutlinedImpl) []
 
 leakRemoveOutlined_ :: R.ReactElement

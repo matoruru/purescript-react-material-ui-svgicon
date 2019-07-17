@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import loupeRoundedImpl :: forall a. R.ReactClass a
 
 loupeRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 loupeRounded = flip (R.unsafeCreateElement loupeRoundedImpl) []
 
 loupeRounded_ :: R.ReactElement

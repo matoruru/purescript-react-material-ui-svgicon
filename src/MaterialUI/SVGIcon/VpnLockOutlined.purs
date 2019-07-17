@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import vpnLockOutlinedImpl :: forall a. R.ReactClass a
 
 vpnLockOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 vpnLockOutlined = flip (R.unsafeCreateElement vpnLockOutlinedImpl) []
 
 vpnLockOutlined_ :: R.ReactElement

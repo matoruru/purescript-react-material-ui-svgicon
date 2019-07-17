@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import trackChangesOutlinedImpl :: forall a. R.ReactClass a
 
 trackChangesOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 trackChangesOutlined = flip (R.unsafeCreateElement trackChangesOutlinedImpl) []
 
 trackChangesOutlined_ :: R.ReactElement

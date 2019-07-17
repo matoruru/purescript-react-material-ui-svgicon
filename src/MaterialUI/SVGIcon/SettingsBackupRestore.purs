@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import settingsBackupRestoreImpl :: forall a. R.ReactClass a
 
 settingsBackupRestore
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 settingsBackupRestore = flip (R.unsafeCreateElement settingsBackupRestoreImpl) []
 
 settingsBackupRestore_ :: R.ReactElement

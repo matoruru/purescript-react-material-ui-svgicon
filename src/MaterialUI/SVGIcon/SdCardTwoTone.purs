@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import sdCardTwoToneImpl :: forall a. R.ReactClass a
 
 sdCardTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 sdCardTwoTone = flip (R.unsafeCreateElement sdCardTwoToneImpl) []
 
 sdCardTwoTone_ :: R.ReactElement

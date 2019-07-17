@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import vibrationRoundedImpl :: forall a. R.ReactClass a
 
 vibrationRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 vibrationRounded = flip (R.unsafeCreateElement vibrationRoundedImpl) []
 
 vibrationRounded_ :: R.ReactElement

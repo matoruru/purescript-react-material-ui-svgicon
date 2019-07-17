@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import cloudQueueOutlinedImpl :: forall a. R.ReactClass a
 
 cloudQueueOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 cloudQueueOutlined = flip (R.unsafeCreateElement cloudQueueOutlinedImpl) []
 
 cloudQueueOutlined_ :: R.ReactElement

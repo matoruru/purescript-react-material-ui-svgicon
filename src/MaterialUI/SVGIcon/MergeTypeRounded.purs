@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import mergeTypeRoundedImpl :: forall a. R.ReactClass a
 
 mergeTypeRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 mergeTypeRounded = flip (R.unsafeCreateElement mergeTypeRoundedImpl) []
 
 mergeTypeRounded_ :: R.ReactElement

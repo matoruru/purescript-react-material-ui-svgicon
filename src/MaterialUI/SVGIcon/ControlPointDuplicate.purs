@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import controlPointDuplicateImpl :: forall a. R.ReactClass a
 
 controlPointDuplicate
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 controlPointDuplicate = flip (R.unsafeCreateElement controlPointDuplicateImpl) []
 
 controlPointDuplicate_ :: R.ReactElement

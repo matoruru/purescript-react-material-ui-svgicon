@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import multilineChartTwoToneImpl :: forall a. R.ReactClass a
 
 multilineChartTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 multilineChartTwoTone = flip (R.unsafeCreateElement multilineChartTwoToneImpl) []
 
 multilineChartTwoTone_ :: R.ReactElement

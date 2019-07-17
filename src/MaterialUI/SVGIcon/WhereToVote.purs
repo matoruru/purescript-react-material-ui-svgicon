@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import whereToVoteImpl :: forall a. R.ReactClass a
 
 whereToVote
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 whereToVote = flip (R.unsafeCreateElement whereToVoteImpl) []
 
 whereToVote_ :: R.ReactElement

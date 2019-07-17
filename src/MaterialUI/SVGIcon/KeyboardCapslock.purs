@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import keyboardCapslockImpl :: forall a. R.ReactClass a
 
 keyboardCapslock
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 keyboardCapslock = flip (R.unsafeCreateElement keyboardCapslockImpl) []
 
 keyboardCapslock_ :: R.ReactElement

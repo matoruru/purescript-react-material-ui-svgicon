@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import bubbleChartTwoToneImpl :: forall a. R.ReactClass a
 
 bubbleChartTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 bubbleChartTwoTone = flip (R.unsafeCreateElement bubbleChartTwoToneImpl) []
 
 bubbleChartTwoTone_ :: R.ReactElement

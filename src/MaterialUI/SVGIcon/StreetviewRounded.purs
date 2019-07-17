@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import streetviewRoundedImpl :: forall a. R.ReactClass a
 
 streetviewRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 streetviewRounded = flip (R.unsafeCreateElement streetviewRoundedImpl) []
 
 streetviewRounded_ :: R.ReactElement

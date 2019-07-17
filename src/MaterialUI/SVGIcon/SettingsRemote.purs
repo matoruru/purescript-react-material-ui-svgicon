@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import settingsRemoteImpl :: forall a. R.ReactClass a
 
 settingsRemote
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 settingsRemote = flip (R.unsafeCreateElement settingsRemoteImpl) []
 
 settingsRemote_ :: R.ReactElement

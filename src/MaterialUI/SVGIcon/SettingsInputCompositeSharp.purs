@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import settingsInputCompositeSharpImpl :: forall a. R.ReactClass a
 
 settingsInputCompositeSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 settingsInputCompositeSharp = flip (R.unsafeCreateElement settingsInputCompositeSharpImpl) []
 
 settingsInputCompositeSharp_ :: R.ReactElement

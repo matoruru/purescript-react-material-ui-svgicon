@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import findInPageRoundedImpl :: forall a. R.ReactClass a
 
 findInPageRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 findInPageRounded = flip (R.unsafeCreateElement findInPageRoundedImpl) []
 
 findInPageRounded_ :: R.ReactElement

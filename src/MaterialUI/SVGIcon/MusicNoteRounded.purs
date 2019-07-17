@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import musicNoteRoundedImpl :: forall a. R.ReactClass a
 
 musicNoteRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 musicNoteRounded = flip (R.unsafeCreateElement musicNoteRoundedImpl) []
 
 musicNoteRounded_ :: R.ReactElement

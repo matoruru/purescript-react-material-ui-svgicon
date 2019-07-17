@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import blurOffOutlinedImpl :: forall a. R.ReactClass a
 
 blurOffOutlined
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 blurOffOutlined = flip (R.unsafeCreateElement blurOffOutlinedImpl) []
 
 blurOffOutlined_ :: R.ReactElement

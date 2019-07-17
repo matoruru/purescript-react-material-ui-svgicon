@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import networkLockedSharpImpl :: forall a. R.ReactClass a
 
 networkLockedSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 networkLockedSharp = flip (R.unsafeCreateElement networkLockedSharpImpl) []
 
 networkLockedSharp_ :: R.ReactElement

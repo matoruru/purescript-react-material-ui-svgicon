@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import assignmentReturnRoundedImpl :: forall a. R.ReactClass a
 
 assignmentReturnRounded
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 assignmentReturnRounded = flip (R.unsafeCreateElement assignmentReturnRoundedImpl) []
 
 assignmentReturnRounded_ :: R.ReactElement

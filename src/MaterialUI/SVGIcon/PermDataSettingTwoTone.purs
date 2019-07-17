@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import permDataSettingTwoToneImpl :: forall a. R.ReactClass a
 
 permDataSettingTwoTone
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 permDataSettingTwoTone = flip (R.unsafeCreateElement permDataSettingTwoToneImpl) []
 
 permDataSettingTwoTone_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import moveToInboxSharpImpl :: forall a. R.ReactClass a
 
 moveToInboxSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 moveToInboxSharp = flip (R.unsafeCreateElement moveToInboxSharpImpl) []
 
 moveToInboxSharp_ :: R.ReactElement

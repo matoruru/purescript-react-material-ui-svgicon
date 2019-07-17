@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import unfoldMoreSharpImpl :: forall a. R.ReactClass a
 
 unfoldMoreSharp
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 unfoldMoreSharp = flip (R.unsafeCreateElement unfoldMoreSharpImpl) []
 
 unfoldMoreSharp_ :: R.ReactElement

@@ -13,8 +13,10 @@ import MaterialUI.Icon (IconPropsO, IconPropsM)
 foreign import moreHorizImpl :: forall a. R.ReactClass a
 
 moreHoriz
-   :: forall a. IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
-   => Record a -> R.ReactElement
+   :: forall a
+    . IsTSEq (Record a) (OptionRecord (IconPropsO IconPropsM) IconPropsM)
+   => Record a
+   -> R.ReactElement
 moreHoriz = flip (R.unsafeCreateElement moreHorizImpl) []
 
 moreHoriz_ :: R.ReactElement
