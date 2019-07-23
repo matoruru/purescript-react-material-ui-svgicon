@@ -49,3 +49,8 @@ You can use this library to make using SVG icons in your Material UI project mor
     ```bash
     $ spago install react-material-ui-svgicon
     ```
+
+## !! NOTE !!
+
+This library is quite huge, so your IDE may hung up.
+To prevent this problem you can delete .purs and .js files you don't need.
